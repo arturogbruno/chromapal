@@ -39,6 +39,7 @@
     width: 100%;
     left: 0;
     bottom: 0;
+    box-sizing: border-box;
     padding: 10px;
     color: #000;
     letter-spacing: 1px;
