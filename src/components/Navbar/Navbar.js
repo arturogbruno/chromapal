@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -34,7 +35,7 @@ class Navbar extends Component {
         const {format, open} = this.state;
         return(
             <header className="Navbar">
-                <div className="Navbar-logo"><a href="/">ChromaPal</a></div>
+                <div className="Navbar-logo"><Link to="/">ChromaPal</Link></div>
                 <div className="slider-container">
                     <span>Level: {level}</span>
                     <div className="slider">
