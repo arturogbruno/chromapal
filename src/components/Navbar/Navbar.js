@@ -51,7 +51,7 @@ class Navbar extends Component {
                 <Snackbar 
                     anchorOrigin={{vertical: "bottom", horizontal: "left"}} 
                     open={open} 
-                    autoHideDuration={3000} 
+                    autoHideDuration={2500} 
                     message={<span id="message-id">Format changed to {format.toUpperCase()}</span>} 
                     ContentProps={{"aria-describedby": "message-id"}}
                     onClose={this.closeSnackbar}
