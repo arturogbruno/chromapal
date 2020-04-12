@@ -6,7 +6,7 @@ import MiniPalette from '../MiniPalette/MiniPalette';
 const styles = {
     root: {
         backgroundColor: "blue",
-        height: "100%",
+        height: "100vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start"
@@ -43,7 +43,7 @@ class PaletteList extends Component {
                         <h1>ChromaPal</h1>
                     </header>
                     <div className={classes.palettes}>
-                        {palettes.map(palette => <MiniPalette {...palette} />)}
+                        {palettes.map(palette => <MiniPalette key={palette.id} {...palette} />)}
                     </div>
                 </div>
             </div>
