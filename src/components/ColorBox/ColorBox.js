@@ -16,7 +16,7 @@ const styles = {
         cursor: "pointer",
         textTransform: "uppercase",
         "&:hover button": {
-            opacity: 1
+            opacity: "1"
         }
     },
     copyText: {
@@ -56,7 +56,67 @@ const styles = {
         textDecoration: "none",
         lineHeight: "30px",
         cursor: "pointer",
-        opacity: 0
+        opacity: "0"
+    },
+    boxContent: {
+        position: "absolute",
+        width: "100%",
+        left: "0",
+        bottom: "0",
+        padding: "10px",
+        color: "#000",
+        letterSpacing: "1px",
+        fontSize: "12px",
+    },
+    copyOverlay: {
+        width: "100%",
+        height: "100%",
+        opacity: "0",
+        zIndex: "0",
+        transform: "scale(0)",
+        transition: "transform 0.6s ease-in-out"
+    },
+    showOverlay: {
+        position: "absolute",
+        opacity: "1",
+        zIndex: "10",
+        transform: "scale(50)"
+    },
+    copyMessage: {
+        position: "fixed",
+        left: "0",
+        right: "0",
+        top: "0",
+        bottom: "0",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "4rem",
+        color: "#fff",
+        opacity: "0",
+        transform: "scale(0)",
+        "& h1": {
+            width: "100%",
+            fontWeight: "400",
+            textShadow: "1px #000",
+            textAlign: "center",
+            backgroundColor: "rgba(255, 255, 255, 0.2)",
+            marginBottom: "0",
+            padding: "1rem"
+        },
+        "& p": {
+            fontSize: "2rem",
+            fontWeight: "200",
+            textTransform: "lowercase"
+        }
+    },
+    showMessage: {
+        opacity: "1",
+        transform: "scale(1)",
+        zIndex: "20",
+        transition: "all 0.4s ease-in-out",
+        transitionDelay: "0.3s"
     }
 };
 
@@ -77,16 +137,17 @@ class ColorBox extends Component {
 
     render() {
         const {colorName, background, showingFullPalette, moreUrl, classes} = this.props;
+        const {copied} = this.state;
         return(
             <CopyToClipboard text={background} onCopy={this.changeCopyState}>
                 <div style={{ backgroundColor: background }} className={classes.ColorBox}>
-                    <div style={{ backgroundColor: background }} className={`copy-overlay ${this.state.copied && "show"}`} />
-                    <div className={`copy-msg ${this.state.copied && "show"}`}>
+                    <div style={{ backgroundColor: background }} className={`${classes.copyOverlay} ${copied && classes.showOverlay}`} />
+                    <div className={`${classes.copyMessage} ${copied && classes.showMessage}`}>
                         <h1 className={classes.copyText}>Copied!</h1>
                         <p className={classes.copyText}>{background}</p>
                     </div>
-                    <div className="copy-container">
-                        <div className="box-content">
+                    <div>
+                        <div className={classes.boxContent}>
                             <span className={classes.colorName}>{colorName}</span>
                         </div>
                         <button className={classes.copyButton}>Copy</button>
