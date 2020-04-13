@@ -28,7 +28,7 @@ class Palette extends Component {
     render() {
         const {colors, id, paletteName, emoji} = this.props.palette;
         const {level, format} = this.state;
-        const colorBoxes = colors[level].map(color => <ColorBox key={color.id} background={color[format]} colorName={color.name} showLink={true} moreUrl={`/palette/${id}/${color.id}`} />)
+        const colorBoxes = colors[level].map(color => <ColorBox key={color.id} background={color[format]} colorName={color.name} showingFullPalette={true} moreUrl={`/palette/${id}/${color.id}`} />)
         return(
             <div className="Palette">
                 <Navbar showSlider={true} level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat} />

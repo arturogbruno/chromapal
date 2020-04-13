@@ -33,7 +33,7 @@ class SingleColorPalette extends Component {
     render() {
         const {id, paletteName, emoji} = this.props.palette;
         const {format} = this.state;
-        const colorBoxes = this._shades.map(color => <ColorBox key={color.name} colorName={color.name} background={color[format]} showLink={false} />);
+        const colorBoxes = this._shades.map(color => <ColorBox key={color.name} colorName={color.name} background={color[format]} showingFullPalette={false} />);
         return(
             <div className="SingleColorPalette Palette">
                 <Navbar showSlider={false} handleChange={this.changeFormat} />
