@@ -1,48 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-
-const styles = {
-    root: {
-        backgroundColor: "#fff",
-        border: "1px solid #000",
-        borderRadius: "5px",
-        padding: "0.5rem",
-        position: "relative",
-        overflow: "hidden",
-        "&:hover" : {
-            cursor: "pointer"
-        }
-    },
-    colors: {
-        width: "100%",
-        height: "150px",
-        backgroundColor: "#dae1e4",
-        borderRadius: "5px",
-        overflow: "hidden"
-    },
-    title: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        margin: 0,
-        color: "#000",
-        paddingTop: "0.5rem",
-        fontSize: "1rem",
-        position: "relative"
-    },
-    emoji: {
-        marginLeft: "0.5rem",
-        fontSize: "1.5rem"
-    },
-    miniColor: {
-        width: "20%",
-        height: "25%",
-        display: "inline-block",
-        margin: "0 auto",
-        position: "relative",
-        marginBottom: "-3.5px"
-    }
-};
+import styles from './MiniPaletteStyles';
 
 const MiniPalette = (props) => {
     const {classes, paletteName, emoji, colors} = props;
