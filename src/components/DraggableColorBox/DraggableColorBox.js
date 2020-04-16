@@ -8,7 +8,7 @@ const styles = {
         width: "20%",
         height: "25%",
         margin: "0 auto",
-        marginBottom: "-3.5px",
+        marginBottom: "-4.5px",
         display: "inline-block",
         position: "relative",
         cursor: "pointer",
