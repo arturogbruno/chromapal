@@ -61,7 +61,7 @@ export default {
         padding: "10px",
         color: "#000",
         letterSpacing: "1px",
-        fontSize: "12px",
+        fontSize: "12px"
     },
     copyOverlay: {
         width: "100%",
