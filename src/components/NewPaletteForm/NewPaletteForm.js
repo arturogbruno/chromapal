@@ -84,8 +84,9 @@ class NewPaletteForm extends Component {
         this.state = {
             open: true,
             currentColor: "#e4e4e4",
-            colors: [],
-            newName: "",
+            newPaletteName: "",
+            newColorName: "",
+            colors: []
         };
 
         this.updateCurrentColor = this.updateCurrentColor.bind(this);
@@ -95,12 +96,15 @@ class NewPaletteForm extends Component {
 	}
 	
 	componentDidMount() {
-		ValidatorForm.addValidationRule("isColorNameUnique", (value) => 
+		ValidatorForm.addValidationRule("colorNameUnique", (value) => 
 			this.state.colors.every(({ name }) => name.toLowerCase() !== value.toLowerCase())
 		);
-		ValidatorForm.addValidationRule("isColorUnique", () => 
+		ValidatorForm.addValidationRule("colorUnique", () => 
 			this.state.colors.every(({ color }) => color !== this.state.currentColor)
-		);
+        );
+        ValidatorForm.addValidationRule("paletteNameUnique", (value) =>
+            this.props.palettes.every(({paletteName}) => paletteName.toLowerCase() !== value.toLowerCase())
+        );
 	}
 
     handleDrawerOpen = () => {
@@ -118,19 +122,19 @@ class NewPaletteForm extends Component {
     addNewColor() {
         const newColor = {
             color: this.state.currentColor,
-            name: this.state.newName,
+            name: this.state.newColorName,
         };
-        this.setState({ colors: [...this.state.colors, newColor], newName: "" });
+        this.setState({ colors: [...this.state.colors, newColor], newColorName: "" });
     }
 
     handleChange(e) {
-        this.setState({ newName: e.target.value });
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     handleSubmit() {
-        let newName = "New test palette";
+        let newName = this.state.newPaletteName;
         const newPalette = {
-            paletteName: "newName",
+            paletteName: newName,
             id: newName.toLowerCase().replace(/ /g, "-"),
             colors: this.state.colors
         }
@@ -140,7 +144,7 @@ class NewPaletteForm extends Component {
 
     render() {
         const { classes } = this.props;
-        const { open, currentColor, newName } = this.state;
+        const { open, currentColor, newColorName } = this.state;
 
         return (
             <div className={classes.root}>
@@ -167,7 +171,17 @@ class NewPaletteForm extends Component {
                         <Typography variant="h6" color="inherit" noWrap>
                             Persistent drawer
                         </Typography>
-                        <Button variant="contained" color="primary" onClick={this.handleSubmit}>Save palette</Button>
+                        <ValidatorForm onSubmit={this.handleSubmit}>
+                            <TextValidator
+                                name="newPaletteName"
+                                label="Palette name"
+                                value={this.state.newPaletteName}
+                                onChange={this.handleChange}
+                                validators={["required", "paletteNameUnique"]}
+                                errorMessages={["Enter palette name", "Name already used"]}
+                            />
+                            <Button type="submit" variant="contained" color="primary">Save palette</Button>
+                        </ValidatorForm>
                     </Toolbar>
                 </AppBar>
                 <Drawer
@@ -200,9 +214,10 @@ class NewPaletteForm extends Component {
                     />
                     <ValidatorForm onSubmit={this.addNewColor}>
                         <TextValidator
-                            value={newName}
+                            name="newColorName"
+                            value={newColorName}
                             onChange={this.handleChange}
-							validators={["required", "isColorNameUnique", "isColorUnique"]}
+							validators={["required", "colorNameUnique", "colorUnique"]}
 							errorMessages={["Enter a color name", "Color name must be unique", "Color already used"]}
                         />
                         <Button
