@@ -3,7 +3,7 @@ export default {
         width: "20%",
         height: "25%",
         margin: "0 auto",
-        marginBottom: "-4.5px",
+        marginBottom: "-5px",
         display: "inline-block",
         position: "relative",
         cursor: "pointer",
