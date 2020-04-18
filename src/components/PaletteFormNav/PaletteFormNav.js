@@ -71,7 +71,6 @@ class PaletteFormNav extends Component {
     }
 
     render() {
-        const { formShowing } = this.state;
         const { classes, open, palettes, handleSubmit } = this.props;
         return(
             <div className={classes.root}>
@@ -122,7 +121,6 @@ class PaletteFormNav extends Component {
                 {this.state.formShowing && (
                     <PaletteMetaForm
                         palettes={palettes}
-                        formShowing={formShowing}
                         hideForm={this.hideForm}
                         handleSubmit={handleSubmit}
                     />
