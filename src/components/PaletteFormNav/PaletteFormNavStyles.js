@@ -1,3 +1,4 @@
+import sizes from '../../sizes';
 import { DRAWER_WIDTH, APPBAR_HEIGHT} from '../../constants';
 const drawerWidth = DRAWER_WIDTH;
 const appBarHeight = APPBAR_HEIGHT;
@@ -34,10 +35,13 @@ const styles = theme => ({
         marginRight: "2rem",
         "& a": {
             textDecoration: "none"
+        },
+        [sizes.down("xs")]: {
+            marginRight: "0.5rem"
         }
     },
     button: {
-        margin: "0 0.5rem",
+        margin: "0 0.5rem"
     }
 });
 

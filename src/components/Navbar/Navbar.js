@@ -39,7 +39,7 @@ class Navbar extends Component {
             <header className={classes.Navbar}>
                 <div className={classes.logo}><Link to="/">ChromaPal</Link></div>
                 {showSlider && (
-                    <div>
+                    <div className={classes.sliderContainer}>
                         <span>Level: {level}</span>
                         <div className={classes.slider}>
                             <Slider defaultValue={level} min={100} max={900} step={100} onChange={changeLevel} />
