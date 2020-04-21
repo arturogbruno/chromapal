@@ -17,7 +17,7 @@ class PaletteList extends Component {
             <div className={classes.root}>
                 <div className={classes.container}>
                     <header className={classes.header}>
-                        <h1>ChromaPal</h1>
+                        <h1 className={classes.heading}>ChromaPal</h1>
                         <Link to="/palette/new"><Button variant="contained" color="secondary">Create Palette</Button></Link>
                     </header>
                     <div className={classes.palettes}>

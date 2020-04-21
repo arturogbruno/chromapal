@@ -1,8 +1,11 @@
 import sizes from '../../sizes';
+import bg from '../../bg.svg';
 
 export default {
     root: {
-        backgroundColor: "darkblue",
+        backgroundColor: "rgb(91, 0, 184)",
+        /* background by SVGBackgrounds.com */
+        backgroundImage: `url(${bg})`,
         height: "100vh",
         display: "flex",
         justifyContent: "center",
@@ -33,18 +36,23 @@ export default {
             textDecoration: "none"
         }
     },
+    heading: {
+        fontSize: "2rem"
+    },
     palettes: {
         boxSizing: "border-box",
         width: "100%",
         display: "grid",
         gridTemplateColumns: "repeat(3, 30%)",
         gridGap: "2.5rem",
+        justifyContent: "space-between",
         [sizes.down("md")]: {
-            gridTemplateColumns: "repeat(2, 50%)"
+            gridTemplateColumns: "repeat(2, 50%)",
+            justifyContent: "space-around",
         },
         [sizes.down("xs")]: {
             gridTemplateColumns: "repeat(1, 100%)",
-            gridGap: "1rem"
+            gridGap: "1.4rem"
         }
     }
 }
