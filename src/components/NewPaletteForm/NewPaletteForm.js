@@ -11,6 +11,7 @@ import Button from "@material-ui/core/Button";
 import PaletteFormNav from '../PaletteFormNav/PaletteFormNav';
 import ColorPickerForm from '../ColorPickerForm/ColorPickerForm';
 import DraggableColorList from "../DraggableColorList/DraggableColorList";
+
 import styles from './NewPaletteFormStyles';
 
 class NewPaletteForm extends Component {

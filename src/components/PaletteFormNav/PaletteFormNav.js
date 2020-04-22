@@ -10,6 +10,7 @@ import IconButton from "@material-ui/core/IconButton";
 import QueueIcon from '@material-ui/icons/Queue';
 import Button from "@material-ui/core/Button";
 import PaletteMetaForm from '../PaletteMetaForm/PaletteMetaForm';
+
 import styles from './PaletteFormNavStyles';
 
 class PaletteFormNav extends Component {

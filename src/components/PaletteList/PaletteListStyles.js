@@ -19,7 +19,8 @@ export default {
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
-        overflow: "auto"
+        overflow: "auto",
+        boxSizing: "border-box"
     },
     container: {
         width: "50%",
