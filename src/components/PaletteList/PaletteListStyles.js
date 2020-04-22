@@ -63,5 +63,8 @@ export default {
             gridTemplateColumns: "repeat(1, 100%)",
             gridGap: "1.4rem"
         }
+    },
+    paleteToDelete: {
+        fontStyle: "italic"
     }
 }
