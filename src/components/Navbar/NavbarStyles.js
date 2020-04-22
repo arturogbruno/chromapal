@@ -21,12 +21,14 @@ export default {
             color: "#000"
         },
         [sizes.down("sm")]: {
-            display: "none"
+            marginRight: "5px",
         }
     },
     sliderContainer: {
-        [sizes.down("sm")]: {
-            marginLeft: "2rem"
+        "& span": {
+            [sizes.down("sm")]: {
+                fontSize: "0.9rem",
+            }
         }
     },
     slider: {
@@ -54,6 +56,9 @@ export default {
     },
     selectContainer: {
         marginLeft: "auto",
-        marginRight: "2rem"
+        marginRight: "2rem",
+        [sizes.down("sm")]: {
+            marginRight: "0.5rem"
+        }
     }
 };
