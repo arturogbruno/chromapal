@@ -50,6 +50,21 @@ export default {
     heading: {
         fontSize: "2rem"
     },
+    noPalettes: {
+        color: "#e4e4e4",
+        width: "100%",
+        height: "70vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        "& h1": {
+            margin: "0.5rem 0"
+        },
+        "& button": {
+            marginTop: "2rem"
+        }
+    },
     palettes: {
         boxSizing: "border-box",
         width: "100%",

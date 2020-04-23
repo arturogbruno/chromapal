@@ -53,7 +53,7 @@ class PaletteList extends Component {
 
     render() {
         const {openDeleteDialog, deletingName} = this.state;
-        const {palettes, classes} = this.props;
+        const {palettes, classes, restoreDefaultPalettes} = this.props;
         return(
             <div className={classes.root}>
                 <div className={classes.container}>
@@ -61,7 +61,14 @@ class PaletteList extends Component {
                         <h1 className={classes.heading}>ChromaPal</h1>
                         <Link to="/palette/new"><Button variant="contained" color="secondary">Create Palette</Button></Link>
                     </header>
-                    <TransitionGroup className={classes.palettes}>
+                    {palettes.length === 0 ? (
+                        <div className={classes.noPalettes}>
+                            <h1>There are no palettes yet.</h1>
+                            <h1><span role="img" aria-label="palette emoji">🎨</span> Start creating your own palettes or restore the default ones.</h1>
+                            <Button variant="outlined" color="secondary" onClick={restoreDefaultPalettes}>Restore default palettes</Button>
+                        </div>
+                    ) : (
+                        <TransitionGroup className={classes.palettes}>
                         {palettes.map(palette => (
                             <CSSTransition key={palette.id} classNames="fade" timeout={500}>
                                 <MiniPalette
@@ -74,6 +81,7 @@ class PaletteList extends Component {
                             </CSSTransition>
                         ))}
                     </TransitionGroup>
+                    )} 
                 </div>
                 <Dialog open={openDeleteDialog} aria-labelledby="delete-dialog-title" onClose={this.closeDialog}>
                     <DialogTitle id="delete-dialog-title">Delete <span className={classes.paleteToDelete}>{deletingName}</span> palette?</DialogTitle>
