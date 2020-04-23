@@ -28,13 +28,13 @@ export default {
         }
     },
     copyText: {
-        color: props => chroma(props.background).luminance() >= 0.5 ? "#000" : "#fff"
+        color: props => chroma(props.background).luminance() >= 0.5 ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.8)"
     },
     colorName: {
-        color: props => chroma(props.background).luminance() <= 0.08 ? "#fff" : "#000"
+        color: props => chroma(props.background).luminance() <= 0.1 ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 0.6)"
     },
     seeMore: {
-        color: props => chroma(props.background).luminance() >= 0.5 ? "rgba(0, 0, 0, 0.6)" : "#fff",
+        color: props => chroma(props.background).luminance() >= 0.5 ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.8)",
         backgroundColor: "rgba(255, 255, 255, 0.3)",
         position: "absolute",
         right: "0px",
@@ -46,7 +46,7 @@ export default {
         lineHeight: "30px"
     },
     copyButton: {
-        color: props => chroma(props.background).luminance() >= 0.5 ? "rgba(0, 0, 0, 0.6": "#fff",
+        color: props => chroma(props.background).luminance() >= 0.5 ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.8)",
         width: "100px",
         height: "30px",
         display: "inline-block",
