@@ -8,7 +8,7 @@ ChromaPal is made using **JavaScript, React, JSS and Material UI**.
 ##### You can see the app in action here --> https://chromapal.netlify.app/
 
 ### Screenshots
-<img src="./public/screenshots/home.png"
+<img src="https://raw.githubusercontent.com/arturogbruno/chromapal/master/public/screenshots/home.png"
      alt="Home screen"
      style="float: left; margin-right: 10px;"
      width="200" /> <img src="./public/screenshots/palette.png"
