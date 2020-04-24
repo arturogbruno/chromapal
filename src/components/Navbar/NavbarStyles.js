@@ -21,13 +21,14 @@ export default {
             color: "#000"
         },
         [sizes.down("sm")]: {
-            marginRight: "5px",
+            fontSize: "16px",
+            marginRight: "5px"
         }
     },
     sliderContainer: {
         "& span": {
             [sizes.down("sm")]: {
-                fontSize: "0.9rem",
+                fontSize: "0.9rem"
             }
         }
     },

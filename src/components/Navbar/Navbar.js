@@ -37,7 +37,7 @@ class Navbar extends Component {
         const {format, open} = this.state;
         return(
             <header className={classes.Navbar}>
-                <div className={classes.logo}><Link to="/">ChromaPal</Link></div>
+                <div className={classes.logo}><Link to="/"><span role="img" aria-label="palette icon">🎨</span> ChromaPal</Link></div>
                 {showSlider && (
                     <div className={classes.sliderContainer}>
                         <span>Level: {level}</span>

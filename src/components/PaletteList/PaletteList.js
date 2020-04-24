@@ -58,7 +58,7 @@ class PaletteList extends Component {
             <div className={classes.root}>
                 <div className={classes.container}>
                     <header className={classes.header}>
-                        <h1 className={classes.heading}>ChromaPal</h1>
+                        <h1 className={classes.heading}><span role="img" aria-label="palette icon">🎨</span> ChromaPal</h1>
                         <Link to="/palette/new"><Button variant="contained" color="secondary">Create Palette</Button></Link>
                     </header>
                     {palettes.length === 0 ? (
